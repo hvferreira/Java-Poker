@@ -1,0 +1,24 @@
+@startuml
+
+
+class Card {
+
+}
+
+class Player {
+
+}
+
+class Deck {
+
+}
+
+class Poker {
+
+}
+
+enum Suit {
+C, D, H, S
+}
+
+@enduml
