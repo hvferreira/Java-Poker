@@ -21,4 +21,13 @@ enum Suit {
 C, D, H, S
 }
 
+enum Rank {
+A,2,3,4,5,6,7,8,9,T,J,Q,K
+}
+
+Player -right- Poker
+Poker -right- Deck
+Deck -right- Card
+Card -up- Suit
+Card -down- Rank
 @enduml
