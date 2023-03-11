@@ -19,4 +19,18 @@ public class Card {
         return rank;
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Card card)) return false;
+
+        return suit == card.suit;
+    }
+
+    @Override
+    public int hashCode() {
+        return suit != null ? suit.hashCode() : 0;
+    }
+    
 }
