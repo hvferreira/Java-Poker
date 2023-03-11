@@ -10,10 +10,12 @@ class CardTest {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/card.csv", numLinesToSkip = 1)
-    void CardTest(Suit suit, Rank rank) { // ver o inStream para conversao
-        // csv file esta a passar String
-        Card card = new Card(suit, rank);
+    void CardTest(String suitString, String rankString) {
+        Suit suit = Suit.valueOf(suitString);
+        Rank rank = Rank.valueOf(rankString);
 
+        Card card = new Card(suit, rank);
+        
         assertEquals(suit, card.getSuit());
         assertEquals(rank, card.getRank());
     }
