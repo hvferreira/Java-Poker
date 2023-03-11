@@ -19,9 +19,12 @@ public class Player {
         hand = new ArrayList<>();
     }
 
-    public ArrayList<Card> getHand() {
-        return new ArrayList<>(hand);
+    public void setHand(ArrayList<Card> hand) {
+        this.hand = hand;
     }
 
+    public ArrayList<Card> getHand() {
+        return hand;
+    }
 
 }
