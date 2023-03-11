@@ -13,7 +13,7 @@ class CardTest {
     void CardTest(String suitString, String rankString) {
         Suit suit = Suit.valueOf(suitString);
         Rank rank = Rank.valueOf(rankString);
-Rank.getAllranks().
+
         Card card = new Card(suit, rank);
 
         assertEquals(suit, card.getSuit());

@@ -22,7 +22,7 @@ public class Poker {
         ranks = Rank.getAllranks();
         playerList = new ArrayList<>();
         //for (Rank s :ranks) {
-          //  System.out.println(s.getSTring().equals());
+        //  System.out.println(s.getSTring().equals());
 
         //}
     }
@@ -45,20 +45,16 @@ public class Poker {
 
         } else if (fourOfaKind(0)) {
 
-        }else if (fullHouse(0)) {
+        } else if (fullHouse(0)) {
 
-        }
-        else if (flush(0)) {
+        } else if (flush(0)) {
 
         } else if (straight(0)) {
 
-        }
-        else if (threeOfAKind(0)) {
+        } else if (threeOfAKind(0)) {
 
         }
     }
-
-
 
 
     public boolean straightFlush(int i) {
@@ -100,6 +96,18 @@ public class Poker {
     }
 
     public boolean threeOfAKind(int i) {
+
+        int k = 0;
+        while (k < 3) {
+            if (playerList.get(i).getHand().stream().filter(a -> a.getRank() == playerList.get(i).getHand().get(1).getRank()).collect(Collectors.toList()).size() == 3 ||
+                    playerList.get(i).getHand().stream().filter(a -> a.getRank() == playerList.get(i).getHand().get(3).getRank()).collect(Collectors.toList()).size() == 3) {
+                System.out.println("true");
+                return true;
+            }
+            k++;
+        }
+        System.out.println("false");
+        return false;
     }
 
     private int suitsNumCardsHand(int i) {
