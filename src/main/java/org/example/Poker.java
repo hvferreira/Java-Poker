@@ -39,20 +39,53 @@ public class Poker {
         playerList.add(player);
     }
 
+    public Player playerWin() {
+
+        if (playerList.get(0).getRanking().getValue() == playerList.get(1).getRanking().getValue()) {
+            System.out.println("ARE EQUAL");
+        } else {
+            if (playerList.get(0).getRanking().getValue() < playerList.get(1).getRanking().getValue()) {
+                return playerList.get(0);
+            } else {
+                return playerList.get(1);
+            }
+        }
+
+        return null;
+    }
+
     public void table() {
 
-        if (straightFlush(0)) {
+        for (int i = 0; i < playerList.size(); i++) {
 
-        } else if (fourOfaKind(0)) {
+            if (straightFlush(0)) {
+                playerList.get(i).setRanking(Ranking.Straightflush);
 
-        } else if (fullHouse(0)) {
+            } else if (fourOfaKind(0)) {
+                playerList.get(i).setRanking(Ranking.Fourofakind);
 
-        } else if (flush(0)) {
+            } else if (fullHouse(0)) {
+                playerList.get(i).setRanking(Ranking.FullHouse);
 
-        } else if (straight(0)) {
+            } else if (flush(0)) {
+                playerList.get(i).setRanking(Ranking.Flush);
 
-        } else if (threeOfAKind(0)) {
+            } else if (straight(0)) {
+                playerList.get(i).setRanking(Ranking.Straight);
 
+            } else if (threeOfAKind(0)) {
+                playerList.get(i).setRanking(Ranking.ThreeofaKind);
+
+            } else if (twoPair(0)) {
+                playerList.get(i).setRanking(Ranking.TwoPairs);
+
+            } else if (onePair(0)) {
+                System.out.println("ONE Pair");
+                playerList.get(i).setRanking(Ranking.OnePair);
+
+            } else {
+                playerList.get(i).setRanking(Ranking.HighCard);
+            }
         }
     }
 
@@ -68,20 +101,17 @@ public class Poker {
     public boolean fourOfaKind(int i) {
         if (playerList.get(i).getHand().stream().filter(a -> a.getRank() == playerList.get(i).getHand().get(0).getRank()).collect(Collectors.toList()).size() == 4 ||
                 playerList.get(i).getHand().stream().filter(a -> a.getRank() == playerList.get(i).getHand().get(1).getRank()).collect(Collectors.toList()).size() == 4) {
-            System.out.println("true 4");
+
             return true;
         }
-        System.out.println("false 4");
         return false;
     }
 
     public boolean fullHouse(int i) {
         if ((playerList.get(i).getHand().stream().filter(a -> a.getRank() == playerList.get(i).getHand().get(0).getRank()).collect(Collectors.toList()).size() == 2 && playerList.get(i).getHand().stream().filter(a -> a.getRank() == playerList.get(i).getHand().get(3).getRank()).collect(Collectors.toList()).size() == 3) ||
                 (playerList.get(i).getHand().stream().filter(a -> a.getRank() == playerList.get(i).getHand().get(0).getRank()).collect(Collectors.toList()).size() == 3 && playerList.get(i).getHand().stream().filter(a -> a.getRank() == playerList.get(i).getHand().get(3).getRank()).collect(Collectors.toList()).size() == 2)) {
-            System.out.println("true fullHouse");
             return true;
         }
-        System.out.println("false FullHouse");
         return false;
     }
 
@@ -101,13 +131,39 @@ public class Poker {
         while (k < 3) {
             if (playerList.get(i).getHand().stream().filter(a -> a.getRank() == playerList.get(i).getHand().get(1).getRank()).collect(Collectors.toList()).size() == 3 ||
                     playerList.get(i).getHand().stream().filter(a -> a.getRank() == playerList.get(i).getHand().get(3).getRank()).collect(Collectors.toList()).size() == 3) {
-                System.out.println("true");
                 return true;
             }
             k++;
         }
-        System.out.println("false");
         return false;
+    }
+
+
+    public boolean twoPair(int i) {
+        int k = 0;
+        while (k < 3) {
+            if (playerList.get(i).getHand().stream().filter(a -> a.getRank() == playerList.get(i).getHand().get(1).getRank()).collect(Collectors.toList()).size() == 2 &&
+                    playerList.get(i).getHand().stream().filter(a -> a.getRank() == playerList.get(i).getHand().get(3).getRank()).collect(Collectors.toList()).size() == 2) {
+
+                return true;
+            }
+            k++;
+        }
+        return false;
+    }
+
+    public boolean onePair(int i) {
+        int k = 0;
+        while (k < 3) {
+            if (playerList.get(i).getHand().stream().filter(a -> a.getRank() == playerList.get(i).getHand().get(1).getRank()).collect(Collectors.toList()).size() == 2 ||
+                    playerList.get(i).getHand().stream().filter(a -> a.getRank() == playerList.get(i).getHand().get(3).getRank()).collect(Collectors.toList()).size() == 2) {
+
+                return true;
+            }
+            k++;
+        }
+        return false;
+
     }
 
     private int suitsNumCardsHand(int i) {

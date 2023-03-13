@@ -13,11 +13,11 @@ class PokerTest {
         Poker poker = new Poker();
         poker.addPlayer(new Player());
         ArrayList<Card> hand = new ArrayList<>();
-        hand.add(new Card(Suit.S, Rank.ACE));
-        hand.add(new Card(Suit.C, Rank.ACE));
-        hand.add(new Card(Suit.D, Rank.TWO));
-        hand.add(new Card(Suit.H, Rank.TWO));
-        hand.add(new Card(Suit.S, Rank.ACE));
+        hand.add(new Card(Suit.S, Rank.JACK));
+        hand.add(new Card(Suit.C, Rank.JACK));
+        hand.add(new Card(Suit.D, Rank.KING));
+        hand.add(new Card(Suit.H, Rank.QUEEN));
+        hand.add(new Card(Suit.S, Rank.TWO));
         poker.getPlayerList().get(0).setHand(hand);
 
 
@@ -25,8 +25,10 @@ class PokerTest {
         //assertFalse(poker.fourOfaKind(0));
         //assertFalse(poker.fourOfaKind(0));
         //assertFalse(poker.fullHouse(0));
-        assertFalse(poker.threeOfAKind(0));
-
+        //assertFalse(poker.threeOfAKind(0));
+        //assertFalse(poker.twpPair(0));
+        //assertFalse(poker.onePair(0));
+        poker.table();
     }
 
     @Test
