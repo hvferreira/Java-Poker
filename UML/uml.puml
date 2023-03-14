@@ -2,31 +2,122 @@
 
 
 class Card {
-
+-Suit suit;
+-Rank rank;
+__
+public Card(Suit suit, Rank rank)
+..
++ Suit getSuit()
++ Rank getRank()
++ boolean equals(Object o)
 }
 
 class Player {
-
+- ArrayList<Card> hand;
+- Ranking ranking;
+__
++ Player()
+..
++ Ranking getRanking()
++ void setRanking(Ranking ranking)
++ Ranking getRanking()
++ void setHand(ArrayList<Card> hand)
++ ArrayList<Card> getHand()
 }
 
 class Deck {
+- ArrayList<Card> cards;
+- Suit[] suits;
+- Rank[] ranks;
+__
++ Deck()
+..
++ int cardsSize()
+- void shuffle()
++ ArrayList<Card> playerHand()
 
 }
 
 class Poker {
-
+- Deck deck;
+- List<Player> playerList;
+- String PLAYER1 ="player1";
+- String PLAYER2 ="player2";
+- String TIE ="tie";
+__
++ Poker()
+..
++ Deck getDeck()
++ List<Player> getPlayerList()
++ void addPlayer(Player player)
++ String playerWin()
+- boolean checkTie()
++ void table()
++ boolean straightFlush(int i)
++ boolean fourOfaKind(int i)
++ boolean fullHouse(int i)
++ boolean flush(int i)
++ boolean straight(int i)
++ boolean threeOfAKind(int i)
++ boolean twoPair(int i)
++ boolean onePair(int i)
+- int suitsNumCardsHand(int i)
+- boolean numbSequecial(int i)
 }
 
 enum Suit {
-C, D, H, S
+C,
+D,
+H,
+S
+- static final Suit[] suits= Suit.values()
++ static Suit[] getAllSuits()
 }
 
 enum Rank {
-2,3,4,5,6,7,8,9,T,J,Q,K,A
+TWO("2", 2),
+THREE("3", 3),
+FOUR("4", 4),
+FIVE("5", 5),
+SIX("6", 6),
+SEVEN("7", 7),
+EIGHT("8", 8),
+NINE("9", 9),
+TEN("T", 10),
+JACK("J", 11),
+QUEEN("Q", 12),
+KING("K", 13),
+ACE("A", 14);
+
+- final String rank;
+- final int value;
+- static final Rank[] ranks = Rank.values();
+__
+Rank(String rank, int value)
+..
++ static Rank[] getAllranks()
++ String getSTring()
++ int getValue()
 }
 
 enum Ranking {
+ Straightflush(1),
+ Fourofakind(2),
+ FullHouse(3),
+ Flush(4),
+ Straight(5),
+ ThreeofaKind(6),
+ TwoPairs(7),
+ OnePair(8),
+ HighCard(9);
 
+ - static final Ranking[] rankings = Ranking.values();
+ - final int value;
+ __
+ Ranking(int value)
+ ..
+ + static Ranking[] getAllRanking()
+ + int getValue()
 }
 
 Player -right- Poker

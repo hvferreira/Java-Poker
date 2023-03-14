@@ -21,11 +21,9 @@ public class Deck {
         for (Suit s : suits) {
             for (Rank r : ranks) {
                 cards.add(new Card(s, r));
-                //System.out.print(r.getSTring() + s + " ");
+
             }
         }
-        //Comparator<Card> rankComparator = (a, b) -> compare(a.getRank().getValue(), b.getRank().getValue());
-        //List<Card> cardsSorted = cards.stream().sorted(Comparator.comparing(cards -> cards.getRank().getValue())).collect(Collectors.toList());
         shuffle();
     }
 
@@ -57,6 +55,7 @@ public class Deck {
             cards.remove(0);
             i++;
         }
-        return new ArrayList(hand.stream().sorted(Comparator.comparing(handPlayer -> handPlayer.getRank().getValue())).collect(Collectors.toList()));
+        return new ArrayList(hand.stream().sorted(Comparator.comparing(handPlayer ->
+                handPlayer.getRank().getValue())).collect(Collectors.toList()));
     }
 }

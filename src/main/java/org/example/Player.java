@@ -8,16 +8,16 @@ public class Player {
     private ArrayList<Card> hand;
     private Ranking ranking;
 
+    public Player() {
+        hand = new ArrayList<>();
+    }
+
     public Ranking getRanking() {
         return ranking;
     }
 
     public void setRanking(Ranking ranking) {
         this.ranking = ranking;
-    }
-
-    public Player() {
-        hand = new ArrayList<>();
     }
 
     public void setHand(ArrayList<Card> hand) {
