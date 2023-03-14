@@ -1,0 +1,25 @@
+hand,ranking
+2S 3S 4S 5S 6S,Straightflush
+7S 8S 9S TS JS,Straightflush
+TS JS QS KS AS,Straightflush
+2C 3C 4C 5C 6C,Straightflush
+7C 8C 9C TC JC,Straightflush
+TC JC QC KC AC,Straightflush
+2H 3H 4H 5H 6H,Straightflush
+7H 8H 9H TH JH,Straightflush
+TH JH QH KH AH,Straightflush
+2D 3D 4D 5D 6D,Straightflush
+7D 8D 9D TD JD,Straightflush
+TD JD QD KD AD,Straightflush
+2S 4S 3S 5S 6S,Straightflush
+7S TS 8S 9S JS,Straightflush
+TS QS JS KS AS,Straightflush
+2C 4C 5C 6C 3C,Straightflush
+TC 7C 8C 9C JC,Straightflush
+TC QC JC KC AC,Straightflush
+2H 4H 5H 6H 3H,Straightflush
+7H 9H TH JH 8H,Straightflush
+TH QH KH AH JH,Straightflush
+2D 5D 3D 4D 6D,Straightflush
+7D 9D TD JD 8D,Straightflush
+TD JD KD AD QD,Straightflush

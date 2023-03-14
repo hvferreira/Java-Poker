@@ -10,21 +10,14 @@ public class Poker {
     private Deck deck;
 
     private List<Player> playerList;
-    private Suit[] suits;
 
-
-    private Rank[] ranks;
-
+    private final String PLAYER1 ="player1";
+    private final String PLAYER2 ="player2";
+    private final String TIE ="tie";
 
     public Poker() {
         deck = new Deck();
-        suits = Suit.getAllSuits();
-        ranks = Rank.getAllranks();
         playerList = new ArrayList<>();
-        //for (Rank s :ranks) {
-        //  System.out.println(s.getSTring().equals());
-
-        //}
     }
 
     public Deck getDeck() {
@@ -39,48 +32,69 @@ public class Poker {
         playerList.add(player);
     }
 
-    public Player playerWin() {
+    public String playerWin() {
 
-        if (playerList.get(0).getRanking().getValue() == playerList.get(1).getRanking().getValue()) {
-            System.out.println("ARE EQUAL");
-        } else {
-            if (playerList.get(0).getRanking().getValue() < playerList.get(1).getRanking().getValue()) {
-                return playerList.get(0);
-            } else {
-                return playerList.get(1);
+        if (checkTie()) {
+            return "tie";
+        } else if (playerList.get(0).getRanking().getValue() < playerList.get(1).getRanking().getValue()) {
+            return "player1";
+        } else if (playerList.get(0).getRanking().getValue() > playerList.get(1).getRanking().getValue()) {
+            return "player2";
+        } else if (playerList.get(0).getRanking().getValue() == playerList.get(1).getRanking().getValue()) {
+
+            int i = playerList.get(0).getHand().size() - 1;
+            while (i > 0) {
+                if (playerList.get(0).getHand().get(i).getRank().getValue() < playerList.get(1).getHand().get(i).getRank().getValue()) {
+                    return "player2";
+                } else if (playerList.get(0).getHand().get(i).getRank().getValue() > playerList.get(1).getHand().get(i).getRank().getValue()) {
+                    return "player1";
+
+                }
+                i--;
             }
+
         }
 
         return null;
+    }
+
+    private boolean checkTie() {
+        int i = 0;
+        while (i < playerList.get(0).getHand().size()) {
+            if (playerList.get(0).getHand().get(i).getRank().getValue() != playerList.get(1).getHand().get(i).getRank().getValue()) {
+                return false;
+            }
+            i++;
+        }
+        return true;
     }
 
     public void table() {
 
         for (int i = 0; i < playerList.size(); i++) {
 
-            if (straightFlush(0)) {
+            if (straightFlush(i)) {
                 playerList.get(i).setRanking(Ranking.Straightflush);
 
-            } else if (fourOfaKind(0)) {
+            } else if (fourOfaKind(i)) {
                 playerList.get(i).setRanking(Ranking.Fourofakind);
 
-            } else if (fullHouse(0)) {
+            } else if (fullHouse(i)) {
                 playerList.get(i).setRanking(Ranking.FullHouse);
 
-            } else if (flush(0)) {
+            } else if (flush(i)) {
                 playerList.get(i).setRanking(Ranking.Flush);
 
-            } else if (straight(0)) {
+            } else if (straight(i)) {
                 playerList.get(i).setRanking(Ranking.Straight);
 
-            } else if (threeOfAKind(0)) {
+            } else if (threeOfAKind(i)) {
                 playerList.get(i).setRanking(Ranking.ThreeofaKind);
 
-            } else if (twoPair(0)) {
+            } else if (twoPair(i)) {
                 playerList.get(i).setRanking(Ranking.TwoPairs);
 
-            } else if (onePair(0)) {
-                System.out.println("ONE Pair");
+            } else if (onePair(i)) {
                 playerList.get(i).setRanking(Ranking.OnePair);
 
             } else {
@@ -175,12 +189,10 @@ public class Poker {
         while (k < playerList.get(i).getHand().size()) {
             if (!(playerList.get(i).getHand().get(k - 1).getRank().getValue() + 1 == playerList.get(i).getHand().get(k).getRank().getValue())) {
                 k = playerList.get(i).getHand().size();
-                System.out.println("while in false");
                 return false;
             }
             k++;
         }
-        System.out.println("while out true");
         return true;
     }
 }
