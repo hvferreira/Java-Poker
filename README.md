@@ -41,7 +41,7 @@ Try to build it in a way that can be adaptable to other card games
 
 ## UML
 
-![This is an image]()https://github.com/hvferreira/Java-Poker/blob/master/UML/uml.png
+![This is an image](https://github.com/hvferreira/Java-Poker/blob/master/UML/uml.png)
 
 ## Future Thoughts
 
