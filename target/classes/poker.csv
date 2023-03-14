@@ -1,0 +1,30 @@
+player1Hand,player2Hand,winner,Ranking
+2S 3S 4S 5S 6S, 2C TS 4C 5C 6C, player1, Straightflush
+2C 3D 7H 9S KC, 6C 9D 3H 5S 8C, player1, HighCard
+TC TD 6H 7S KC, TS TH 6D KS KD, player2, TwoPairs
+8C 8D 2H 8S KC, 6C 9C 3C 5C 9C, player2, FullHouse
+2S 3C 4S 5H 6S, AC AD AH AS KC, player2, Fourofakind
+7H AH 9H TH JH, 2C 3D 7D 9S KC, player1, Flush
+AC AD 2H KS KC, AS AH 2D KD KH, tie, TwoPairs
+2H 5H 3H 6H 4H, AC KC TC QC JC, player2, Straightflush
+6C 5C 3C 4C 2C, 6S 5S 3S 4S 2S, tie, Straightflush
+2H 2C 2S 2D 4H, 6C 6D 6H 6S 3C, player2, Fourofakind
+AH AC AS AD 8H, 2C 2D 2H 2S 8C, player1, Fourofakind
+2H 2C 2S 4D 4H, AC AD AH 9S 9C, player2, FullHouse
+5H 4H 6D TH 8H, 6C KC 8C 5C 3C, player2, Flush
+5H 3H 6H KH 8H, 6C KC 8C 5C 3C, tie, Flush
+9H TH QH 8C JH, 9C TC JD KC QC, player2, Straight
+9C TC 2S KC QC, 9H TH QH 8H JH, player2, Straight
+9H TH QH KC JH, 9C TC JD KC QC, tie, Straight
+2S 3S 4S 5S 6S, 2D 3D 7H 9S KC, player1, Straightflush
+2S TS 4S 5S 6S, AC AD 2H 3S KC, player1, Flush
+2C 2D 7H 9S KC, AC 4D 2H 3S KC, player1, OnePair
+AC AD AH 2S KC, KC KD 3H 2S 2C, player1, ThreeofaKind
+JC TD 5H 6S KC, 7D 8D 9D TD JD, player2, Straightflush
+8C 8D 8H 8S KC, 2S 3S 4S 5S 6S , player2, Straightflush
+2C 3D 7H 9S KC, 2D 3S 7C 9H KD, tie, HighCard
+AC AD 2H 3S KC, AS AH 2D 3C KS, tie, OnePair
+2H 3D 5S 9C KD, 2C 3H 4S 8C AH, player2, HighCard
+2H 4S 4C 2D 4H, 2S 8S AS QS 3S, player1, FullHouse
+2H 3D 5S 9C KD, 2C 3H 4S 8C KH, player1, HighCard
+2H 3D 5S 9C KD, 2D 3H 5C 9S KH, tie, HighCard
