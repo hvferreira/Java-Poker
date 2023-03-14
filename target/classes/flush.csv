@@ -1,0 +1,25 @@
+hand,ranking
+2S TS 4S 5S 6S,Flush
+7S 8S 2S TS JS,Flush
+TS JS 3S KS AS,Flush
+2C QC 4C 5C 6C,Flush
+7C 6C 9C TC JC,Flush
+TC 3C QC KC AC,Flush
+2H KH 4H 5H 6H,Flush
+7H AH 9H TH JH,Flush
+TH 6H QH KH AH,Flush
+2D 9D 4D 5D 6D,Flush
+7D JD 9D TD JD,Flush
+TD 2D QD KD AD,Flush
+2S AS 3S 5S 6S,Flush
+7S 3S 8S 9S JS,Flush
+TS 6S JS KS AS,Flush
+2C 9C 5C 6C 3C,Flush
+TC 3C 8C 9C JC,Flush
+TC 5C JC KC AC,Flush
+2H 8H 5H 6H 3H,Flush
+7H 3H TH JH 8H,Flush
+TH 4H KH AH JH,Flush
+2D 9D 3D 4D 6D,Flush
+7D AD TD JD 8D,Flush
+TD 3D KD AD QD,Flush
